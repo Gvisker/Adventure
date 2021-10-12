@@ -14,7 +14,7 @@ namespace ChooseYourOwnAdventure
             Console.WriteLine($"Hello, {name}! Welcome to our story.");
             Console.WriteLine("It begins on a cold rainy night. You're sitting in your room and hear a noise coming from down the hall. Do you go investigate?");
 
-            Console.Write("Type YES or NO:");
+            Console.Write("Type YES or NO: ");
             string noiseChoice = Console.ReadLine();
             noiseChoice = noiseChoice.ToUpper();
 
@@ -26,7 +26,7 @@ namespace ChooseYourOwnAdventure
             else if (noiseChoice == "YES")
             {
                 Console.WriteLine("You walk into the hallway and see a light coming from under a door down the hall. You walk towards it. Do you open it or knock?");
-                Console.WriteLine("Type OPEN or KNOCK:");
+                Console.WriteLine("Type OPEN or KNOCK: ");
 
                 string doorChoice = Console.ReadLine();
                 doorChoice = doorChoice.ToUpper();
@@ -37,13 +37,13 @@ namespace ChooseYourOwnAdventure
 
                     Console.WriteLine("Type your answer: ");
 
-                    String riddleAnswer = Console.ReadLine();
+                    String riddleAnswer = Console.ReadLine().ToUpper();
 
                     if (riddleAnswer == "NOTHING")
                     {
                         Console.WriteLine("The door opens and NOTHING is there." +
                             " You turn off the light and run back to your room and lock the door." +
-                            " THE END.");
+                            " \nTHE END.");
 
                     }
                     else
@@ -54,8 +54,32 @@ namespace ChooseYourOwnAdventure
                 }
                 else if (doorChoice == "OPEN")
                 {
+                    Console.WriteLine("The door is locked! See if one of your three keys will open it. ");
+                    Console.WriteLine("Enter a number (1-3): ");
 
+                    string keyChoice = Console.ReadLine().ToUpper();
+
+                    switch (keyChoice)
+                    {
+                        case "1":
+                            Console.WriteLine("You choose the first key. Lucky choice! " +
+                                "The door opens and NOTHING is there. Strange...\n" +
+                                "THE END.");
+                            break;
+                        case "2":
+                            Console.WriteLine("You choose the second key. The door doesn't open.\n" +
+                                "THE END.");
+                            break;
+                        case "3":
+                            Console.WriteLine("You choose the third key. The door doesn't open.\n" +
+                                "THE END.");
+                            break;
+                        default:
+                            break;
+
+                    }
                 }
+                    
 
             }
 
