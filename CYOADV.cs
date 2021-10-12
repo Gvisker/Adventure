@@ -27,11 +27,32 @@ namespace ChooseYourOwnAdventure
             {
                 Console.WriteLine("You walk into the hallway and see a light coming from under a door down the hall. You walk towards it. Do you open it or knock?");
                 Console.WriteLine("Type OPEN or KNOCK:");
-        
+
                 string doorChoice = Console.ReadLine();
                 doorChoice = doorChoice.ToUpper();
 
                 if (doorChoice == "KNOCK")
+                {
+                    Console.WriteLine("A voice behind the door speaks. It says, \"Answer this riddle: \" \"Poor people have it. Rich people need it. If you eat it you die. What is it?\"");
+
+                    Console.WriteLine("Type your answer: ");
+
+                    String riddleAnswer = Console.ReadLine();
+
+                    if (riddleAnswer == "NOTHING")
+                    {
+                        Console.WriteLine("The door opens and NOTHING is there." +
+                            " You turn off the light and run back to your room and lock the door." +
+                            " THE END.");
+
+                    }
+                    else
+                    {
+                        Console.WriteLine("You answered incorrectly. The door doesn't open.\n"
+                                          + "THE END.");
+                    }
+                }
+                else if (doorChoice == "OPEN")
                 {
 
                 }
